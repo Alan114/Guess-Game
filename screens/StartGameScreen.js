@@ -5,7 +5,13 @@ import MainButton from "../components/MainButton";
 const StartGameScreen = () => {
   return (
     <View style={styles.inputContainer}>
-      <TextInput style={styles.numberInput} maxLength={2} />
+      <TextInput
+        style={styles.numberInput}
+        maxLength={2}
+        keyboardType="number-pad"
+        autoCapitalize="none"
+        autoCorrect={false}
+      />
       <MainButton>Reset</MainButton>
       <MainButton>Confirm</MainButton>
     </View>
