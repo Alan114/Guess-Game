@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Alert, StyleSheet, Text, View } from "react-native";
+import { Alert, StyleSheet, View } from "react-native";
 import NumberContainer from "../components/game/NumberContainer";
 import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
 import MainButton from "../components/ui/MainButton";
 import Title from "../components/ui/Title";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -65,20 +66,17 @@ const GameScreen = ({ userNumber, onGameOver }) => {
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
             <MainButton onPress={nextGuesshandler.bind(this, "lower")}>
-              -
+              <Ionicons name="md-remove" size={24} color="white" />
             </MainButton>
           </View>
 
           <View style={styles.buttonContainer}>
             <MainButton onPress={nextGuesshandler.bind(this, "greater")}>
-              +
+              <Ionicons name="md-add" size={24} color="white" />
             </MainButton>
           </View>
         </View>
       </Card>
-      <View>
-        <Text>Log rounds</Text>
-      </View>
     </View>
   );
 };
